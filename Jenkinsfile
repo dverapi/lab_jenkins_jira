@@ -1,6 +1,11 @@
 pipeline {
     agent any
 
+    environment {
+        def repository=${REPO}
+        def token=${TOKEN}
+    }
+
     parameters {
         string(name: 'nombre', defaultValue: 'test', description: 'name')
     } 
@@ -9,7 +14,7 @@ pipeline {
 
         stage ('clone repo'){
             steps{
-                git branch: 'develop', url: 'https://$env.TOKEN@$env.REPO'
+                git branch: 'develop', url: 'https://${token}@${repository}'
             }
         }
 
