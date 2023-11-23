@@ -9,9 +9,9 @@ pipeline {
 
         stage ('clone repo'){
             steps{
-                echo ${TOKEN}
-                echo ${REPOSITORY}
-                
+                sh "echo ${TOKEN}"
+                sh "echo ${REPOSITORY}"
+
                 git branch: 'develop', url: 'https://${token}@${repository}'
             }
         }
