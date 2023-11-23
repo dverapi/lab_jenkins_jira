@@ -16,6 +16,7 @@ pipeline {
 
         stage('Saludo') {
             steps {
+               input ('esto es un test') 
                sh "echo 'hola mundo ${params.nombre}'"
                //sh "make SALUDO name=params.nombre"
             }
