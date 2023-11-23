@@ -1,13 +1,5 @@
-def repository
-def token
-
 pipeline {
     agent any
-
-    environment {
-        repository=${REPO}
-        token=${TOKEN}
-    }
 
     parameters {
         string(name: 'nombre', defaultValue: 'test', description: 'name')
@@ -17,6 +9,9 @@ pipeline {
 
         stage ('clone repo'){
             steps{
+                echo ${TOKEN}
+                echo ${REPOSITORY}
+                
                 git branch: 'develop', url: 'https://${token}@${repository}'
             }
         }
