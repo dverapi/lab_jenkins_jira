@@ -17,8 +17,7 @@ pipeline {
             steps {
                sh "pwd"
                input ('¿Continuar con el saludo?') 
-               //sh "echo 'hola mundo ${params.nombre}'"
-               sh "make SALUDO name=params.nombre"
+               sh "echo 'hola mundo ${params.nombre}'"
             }
         }
     }
