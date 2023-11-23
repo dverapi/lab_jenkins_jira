@@ -1,9 +1,12 @@
+def repository
+def token
+
 pipeline {
     agent any
 
     environment {
-        def repository=${REPO}
-        def token=${TOKEN}
+        repository=${REPO}
+        token=${TOKEN}
     }
 
     parameters {
