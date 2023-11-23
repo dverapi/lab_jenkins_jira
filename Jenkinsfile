@@ -9,7 +9,7 @@ pipeline {
 
         stage ('clone repo'){
             steps{
-                git branch: 'develop', url: 'https://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@github.com/dverapi/lab_jenkins_jira.git'
+                git branch: 'develop', url: 'https://${TOKEN}@${REPO}.git'
             }
         }
 
