@@ -3,7 +3,7 @@ pipeline {
 
     parameters {
         //choice(name: 'ambiente', choices: [Desarrollo], description: 'environment deploy')
-        string(name: 'nombre', defaultValue: '', description: 'name')
+        text(name: 'nombre', defaultValue: 'test', description: 'name')
     } 
 
     stages {
