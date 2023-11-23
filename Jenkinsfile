@@ -12,7 +12,7 @@ pipeline {
                 sh "echo ${TOKEN} //////////// ${REPOSITORY}"
                 
 
-                //git branch: 'develop', url: 'https://${token}@${repository}'
+                git branch: 'develop', url: 'https://${TOKEN}@${REPOSITORY}'
             }
         }
 
