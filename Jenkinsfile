@@ -8,7 +8,9 @@ pipeline {
     stages {
 
         stage ('clone repo'){
-            git branch: 'develop', credentialsId: 'JiraPassword', url: 'https://github.com/dverapi/lab_jenkins_jira.git'
+            steps{
+                git branch: 'develop', credentialsId: 'JiraPassword', url: 'https://github.com/dverapi/lab_jenkins_jira.git'
+            }
         }
 
         stage('Saludo') {
