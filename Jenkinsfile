@@ -9,7 +9,7 @@ pipeline {
 
         stage ('clone repo'){
             steps{
-                git branch: 'develop', url: 'https://${TOKEN}@${REPO}.git'
+                git branch: 'develop', url: 'https://${TOKEN}@${REPO}'
             }
         }
 
