@@ -9,7 +9,7 @@ pipeline {
     stages {
         stage('clone repo') {
             steps {
-              git clone https://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@github.com/dverapi/lab_jenkins_jira
+              git clone https://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@github.com/dverapi/lab_jenkins_jira/tree/develop
               //withCredentials(usernamePassword(credentialsId :user-github ,passwordVariable: 'GIT_PASSWORD', usernameVariable: 'GIT_USERNAME', url: 'https://github.com/dverapi/lab_jenkins_jira.git/tree/develop'))
             }
         }
