@@ -1,0 +1,23 @@
+pipeline {
+    agent any
+
+    parameters {
+        choice(name: 'ambiente', choices: [Desarrollo], description: 'environment deploy')
+        string(name: 'nombre', defaultValue: '', description: 'name')
+    } 
+
+    stages {
+        stage('clone repo') {
+            steps {
+              withCredentials(usernamePassword(credentialsId :user-github ,passwordVariable: 'GIT_PASSWORD', usernameVariable: 'GIT_USERNAME'))
+              git clone https://github.com/dverapi/lab_jenkins_jira.git
+            }
+        }
+
+        stage('Saludo') {
+            steps {
+               sh "make SALUDO name=params.nombre"
+            }
+        }
+    }
+}
