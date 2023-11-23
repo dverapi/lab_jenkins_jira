@@ -9,8 +9,7 @@ pipeline {
     stages {
         stage('clone repo') {
             steps {
-              withCredentials(usernamePassword(credentialsId :user-github ,passwordVariable: 'GIT_PASSWORD', usernameVariable: 'GIT_USERNAME'))
-              git clone https://github.com/dverapi/lab_jenkins_jira.git
+              withCredentials(usernamePassword(credentialsId :user-github ,passwordVariable: 'GIT_PASSWORD', usernameVariable: 'GIT_USERNAME', url: 'https://github.com/dverapi/lab_jenkins_jira.git'))
             }
         }
 
