@@ -10,7 +10,7 @@ pipeline {
 
         stage('Saludo') {
             steps {
-               sh 'echo hola mundo ${parameters.nombre}'
+               sh 'echo "hola mundo ${parameters.nombre}"'
                //sh "make SALUDO name=params.nombre"
             }
         }
